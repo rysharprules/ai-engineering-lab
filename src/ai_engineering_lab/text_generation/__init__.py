@@ -1,1 +1,1 @@
-"""Text generation experiments from Chapter 1."""
+"""Text generation experiments."""

@@ -1,4 +1,4 @@
-"""Generate text with a Hugging Face model (Chapter 1 experiment).
+"""Generate text with a Hugging Face model.
 
 Run:
     python -m ai_engineering_lab.text_generation.first_generation
@@ -77,7 +77,7 @@ def generate_text(
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Chapter 1: generate your first text")
+    parser = argparse.ArgumentParser(description="Generate your first text")
     parser.add_argument("--prompt", default=DEFAULT_PROMPT, help="Prompt to give the model")
     parser.add_argument("--model", default=DEFAULT_MODEL_ID, help="Hugging Face model ID")
     parser.add_argument("--max-new-tokens", type=int, default=100)

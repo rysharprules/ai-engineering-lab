@@ -1,4 +1,4 @@
-"""Tests for the Chapter 1 example; inference is not executed in tests."""
+"""Tests for the first text-generation example; inference is not executed in tests."""
 
 import pytest
 

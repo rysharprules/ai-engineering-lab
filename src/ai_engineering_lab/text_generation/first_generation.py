@@ -8,6 +8,7 @@ The model is downloaded from Hugging Face on first run.
 """
 
 import argparse
+import sys
 
 DEFAULT_MODEL_ID = "Qwen/Qwen2.5-0.5B-Instruct"
 DEFAULT_PROMPT = "Create a funny joke about chickens."
@@ -89,6 +90,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
     args = parse_args()
     response = generate_text(
         prompt=args.prompt,

@@ -6,8 +6,9 @@ import argparse
 from pathlib import Path
 from urllib.request import urlopen
 
-from gensim.models import Word2Vec
+from typing import TYPE_CHECKING
 
+if TYPE_CHECKING:\n    from gensim.models import Word2Vec\n
 PLAYLIST_URL = (
     "https://storage.googleapis.com/maps-premium/dataset/yes_complete/train.txt"
 )
@@ -65,6 +66,8 @@ def train_song_model(
     epochs: int = 10,
 ) -> Word2Vec:
     """Learn song vectors from songs appearing near one another in playlists."""
+    from gensim.models import Word2Vec
+
     return Word2Vec(
         sentences=playlists,
         vector_size=vector_size,

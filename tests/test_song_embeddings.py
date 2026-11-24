@@ -14,7 +14,7 @@ def test_parse_playlists_skips_metadata_and_single_song_rows():
 
 
 def test_parse_song_metadata_maps_ids_to_title_and_artist():
-    contents = "0\tFirst Song\tArtist One\n1\tSecond Song\tArtist Two\n"
+    contents = "0 \tFirst Song\tArtist One\n1\tSecond Song\tArtist Two\n"
     assert parse_song_metadata(contents) == {
         "0": {"title": "First Song", "artist": "Artist One"},
         "1": {"title": "Second Song", "artist": "Artist Two"},

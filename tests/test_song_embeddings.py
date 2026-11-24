@@ -1,3 +1,5 @@
+import pytest
+
 from ai_engineering_lab.song_embeddings.train_song_embeddings import (
     parse_playlists,
     parse_song_metadata,
@@ -20,6 +22,7 @@ def test_parse_song_metadata_maps_ids_to_title_and_artist():
 
 
 def test_recommend_songs_uses_song_ids_and_returns_metadata():
+    pytest.importorskip("gensim")
     playlists = [
         ["a", "b", "c"],
         ["a", "b", "d"],
@@ -45,6 +48,7 @@ def test_recommend_songs_uses_song_ids_and_returns_metadata():
 
 
 def test_recommend_songs_rejects_unknown_id():
+    pytest.importorskip("gensim")
     model = train_song_model([["a", "b"], ["b", "c"]], vector_size=8, epochs=2)
     try:
         recommend_songs(model, {}, "missing")

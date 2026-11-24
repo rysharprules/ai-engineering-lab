@@ -39,9 +39,9 @@ def parse_song_metadata(contents: str) -> dict[str, dict[str, str]]:
     """Map each song ID to its title and artist."""
     songs: dict[str, dict[str, str]] = {}
     for line in contents.splitlines():
-        fields = line.rstrip("\n").split("\t")
+        fields = line.split("\t")
         if len(fields) >= 3:
-            song_id, title, artist = fields[:3]
+            song_id, title, artist = (field.strip() for field in fields[:3])
             songs[song_id] = {"title": title, "artist": artist}
     return songs
 
@@ -119,16 +119,16 @@ def main() -> None:
     playlists, songs = load_dataset()
     print(f"Loaded {len(playlists):,} playlists and {len(songs):,} songs.")
 
+    selected_song = songs.get(args.song_id)
+    if selected_song is None:
+        parser.error(f"No metadata found for song ID {args.song_id!r}.")
+
     model = train_song_model(
         playlists,
         vector_size=args.vector_size,
         window=args.window,
         epochs=args.epochs,
     )
-
-    selected_song = songs.get(args.song_id)
-    if selected_song is None:
-        parser.error(f"No metadata found for song ID {args.song_id!r}.")
 
     print(f"\nRecommendations for: {selected_song['title']} — {selected_song['artist']}")
     for song_id, metadata, score in recommend_songs(

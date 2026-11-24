@@ -8,7 +8,9 @@ from urllib.request import urlopen
 
 from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:\n    from gensim.models import Word2Vec\n
+if TYPE_CHECKING:
+    from gensim.models import Word2Vec
+
 PLAYLIST_URL = (
     "https://storage.googleapis.com/maps-premium/dataset/yes_complete/train.txt"
 )

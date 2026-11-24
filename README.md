@@ -6,7 +6,8 @@ A collection of hands-on Python experiments in AI engineering, organized by conc
 
 | Area | Experiment | Description |
 | --- | --- | --- |
-| Text generation | [First text generation](src/ai_engineering_lab/text_generation/README.md#first-text-generation) | Run a pretrained language model locally using Hugging Face Transformers. |\n| Embeddings | [Song embeddings and recommendations](src/ai_engineering_lab/song_embeddings/README.md) | Learn song vectors from playlist co-occurrence with Word2Vec and find similar songs. |
+| Text generation | [First text generation](src/ai_engineering_lab/text_generation/README.md#first-text-generation) | Run a pretrained language model locally using Hugging Face Transformers. |
+| Embeddings | [Song embeddings and recommendations](src/ai_engineering_lab/song_embeddings/README.md) | Learn song vectors from playlist co-occurrence with Word2Vec and find similar songs. |
 
 ## Shared setup
 

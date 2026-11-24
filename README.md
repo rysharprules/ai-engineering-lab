@@ -25,7 +25,15 @@ A collection of hands-on Python experiments in AI engineering, organized by conc
 
    In **Git Bash**, use `source .venv/Scripts/activate` instead of the PowerShell activation command. If PowerShell blocks activation, configure PyCharm to use `.venv\Scripts\python.exe`, or invoke that interpreter directly.
 
-5. For experiments that require it, install **PyTorch** for your hardware from the official [PyTorch installer selector](https://pytorch.org/get-started/locally/). Choose **Windows / Pip / Python / CPU** initially if unsure. For an NVIDIA CUDA-compatible GPU, use the selector's supported CUDA build instead. Check `nvidia-smi` to identify your card.
+5. For experiments that require it, install **PyTorch** for your hardware from the official [PyTorch installer selector](https://pytorch.org/get-started/locally/). Choose **Windows / Pip / Python / CPU** initially if unsure. For an NVIDIA CUDA-compatible GPU, use the selector's supported CUDA build instead. Check `nvidia-smi` to identify your card. E.g.,
+   I used CUDA-enabled PyTorch build for NVIDIA GPU:
+   ```bash
+   python -m pip install torch --index-url https://download.pytorch.org/whl/cu126
+   ```
+   and CPU-only PyTorch build for AMD integrated graphics:
+   ```bash
+   python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+   ```
 6. Install the project and developer dependencies:
 
    ```powershell
